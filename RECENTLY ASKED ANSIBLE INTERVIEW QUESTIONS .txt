@@ -1,0 +1,14 @@
+ANSIBLE INTERVIEW QUESTIONS
+
+Working process of Ansible?
+What is architecture of Ansible?
+What is playbook in Ansible?
+What is a DRY run in playbook? (ANSIBLE-PLAYBOOK FILENAME —CHECK)
+Why is Ansible preferred over the other configuration management tools?
+What is Configuration Management?
+Can you explain any Ansible playbook that you wrote and found to be effective?
+What is Ansible Dynamic Inventory
+What is the Ansible galaxy command and why it is used for?
+Does Ansible support the parallel execution of tasks (YES)
+Can Ansible be used for Infrastructure As Code (IaC)
+Write an Ansible playbook to install and start httpd service on an existing EC2 instance?

@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    environment {
+        password=‘dockerhubpassword
+    }
+    stages {
+        stage ("Code") {
+            steps {
+                git "https://github.com/devops0014/staticsite-docker.git"
+            }
+        }
+        stage ("Build") {
+            steps {
+                sh 'docker build -t $IMAGE html/'
+            }
+        }
+        stage ("Deploy") {
+            steps {
+                sh 'docker run -itd --name $CONT_NAME -p $PORT:80 $IMAGE'
+            }
+        }
+        stage ("login") {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'mustafa', usernameVariable: 'registryuser', passwordVariable: 'password') ]) {
+                        sh "docker login -u=shaikmustafa -p=$password"
+                        sh 'docker tag image1 shaikmustafa/jrepo:image1'
+                        sh 'docker push shaikmustafa/jrepo:image1'
+                    }   
+                }
+            }
+                
+                
+                
+        }
+    }
+}
